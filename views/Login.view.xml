@@ -1,0 +1,48 @@
+<mvc:View
+	controllerName="app/controllers/Login"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt">
+	<App id="app">
+		<Page id="login">
+			<l:VerticalLayout id="containerLayout" width="40%">
+                <l:BlockLayout id="BlockLayout">
+                    <l:BlockLayoutRow>
+                        <l:BlockLayoutCell title="User Log in form">
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Email" labelFor="email"/>
+                                <Input id="email" required="true"/>
+                            </VBox>
+                    
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Password" labelFor="password" />
+                                <Input id="password" type="Password" required="true"/>
+                            </VBox>
+                            
+                            <VBox class="sapUiSmallMargin">
+                                <Button text="Log in"
+                                        press="onPress"
+                                        ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Button>
+                                <Text text="Don't have an account ?" />
+                                <Button text="Sign up here"
+                                        press="navToReg"
+                                        ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Button>
+                            </VBox>
+                        </l:BlockLayoutCell>
+                    </l:BlockLayoutRow>
+                </l:BlockLayout>
+            </l:VerticalLayout>
+		</Page>
+	</App>
+</mvc:View>

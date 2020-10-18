@@ -1,0 +1,92 @@
+<mvc:View
+	controllerName="app/controllers/App"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt">
+	<App id="app">
+		<Page id="register">
+			<l:VerticalLayout id="containerLayout" width="40%">
+                <l:BlockLayout id="BlockLayout">
+                    <l:BlockLayoutRow>
+                        <l:BlockLayoutCell title="User registration form">
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Name" labelFor="name" />
+                                <Input id="name" required="true" />
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Email" labelFor="email"/>
+                                <Input id="email" required="true"/>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Phone number" labelFor="number"/>
+                                <Input id="number" required="true"/>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Date of Birth" labelFor="dob" />
+                                <DatePicker id="dob" change="handleChange" class="sapUiSmallMarginBottom" required="true"/>
+                            </VBox>                       
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Country" labelFor="country"/>
+                                <Select
+                                    id="country"
+                                    width="100%"
+                                    items="{
+                                        path: '/Countires',
+                                        sorter: { path: 'name' }
+                                        }">
+                                    <core:Item key="{key}" text="{name}" />
+                                </Select>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Industry" labelFor="industry"/>
+                                <ComboBox
+                                    id = "industry"
+                                    width="100%"
+                                    required="true"
+                                    items="{
+                                        path: '/Industry',
+                                        sorter: { path: 'name' }
+                                    }">
+                                    <core:Item key="{key}" text="{name}" />
+                                </ComboBox>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Gender" />
+                                <RadioButton groupName="GroupA" id="male" text="Male" selected="true" />
+                                <RadioButton groupName="GroupA" id="female" text="Female" />
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Password" labelFor="password" />
+                                <Input id="password" type="Password" required="true"/>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Label text="Confirm password" labelFor="confirmPassword" />
+                                <Input id="confirmPassword" type="Password" required="true"/>
+                            </VBox>
+                            <VBox class="sapUiSmallMargin">
+                                <Button text="Register"
+                                        press="onPress"
+                                        ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Button>
+                                <Text text="Already a member ?" />
+                                <Button text="Log in here"
+                                        press="navToLogin"
+                                        ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Button>
+                            </VBox>
+                        </l:BlockLayoutCell>
+                    </l:BlockLayoutRow>
+                </l:BlockLayout>
+            </l:VerticalLayout>
+		</Page>
+	</App>
+</mvc:View>
